@@ -63,7 +63,7 @@ Example result
     "age": "<=24",
     "gender": "F",
     "postal_code": 6055,
-    "paid_amount": xxxx
+    "paid_amount": XXXX
 }
 
 ```
@@ -90,7 +90,7 @@ GET http://0.0.0.0:80/payment/total
 Example result
 ```
 {
-    "total_payment": xxxx
+    "total_payment": XXXX
 }
 
 ```
@@ -105,11 +105,11 @@ Example result
 [
     {
         "postal_code": 6070,
-        "amount": 1189270.8405199999
+        "amount": XXXX
     },
     {
         "postal_code": 6126,
-        "amount": 3495925.1554300003
+        "amount": XXXX
     },
     .
     .
