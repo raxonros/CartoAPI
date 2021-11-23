@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+
+  carto_api:
+    image: 'carto_docker:latest'
+    container_name: carto_api
+    ports:
+      - 80:80
+    networks:
+      - default
+    volumes:
+      - ./config.yaml:/carto_api/config.yaml
+      - ./populate_database.py:/carto_api/populate_database.py
+
+  postgres:
+    image: 'postgres:latest'
+    container_name: carto_postgres
+    ports:
+      - 5432:5432
+    environment:
+      - TZ=Europe/Madrid
+      - POSTGRES_DB=carto
+      - POSTGRES_USER=carto
+      - POSTGRES_PASSWORD=carto
+    volumes:
+      - ./data_csv:/data_csv
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
